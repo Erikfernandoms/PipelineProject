@@ -97,6 +97,12 @@ jobs:
         if: steps.plan.outcome == 'failure'
         run: exit 1
 
+      - name: Baixando dependencias
+        run: pip install -r requirements.txt
+
+      - name: Execução dos testes
+        run: python -m pytest app/tests/
+
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: terraform apply -auto-approve -input=false
