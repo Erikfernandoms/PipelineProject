@@ -64,8 +64,7 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Execução dos testes
-        steps:
-          run:  |
+        run:  |
           cd app
           python -m pytest tests/
 
