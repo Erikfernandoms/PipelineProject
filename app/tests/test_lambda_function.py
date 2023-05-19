@@ -1,7 +1,5 @@
-from lambda_function import lambda_handler
+import lambda_function
 
-
-event = {"a": 1, "b": 2}
 
 def test_handler(event):
-    assert lambda_handler(event) == 3
+    assert lambda_function.lambda_handler(event, "") == 3
