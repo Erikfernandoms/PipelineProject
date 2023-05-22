@@ -1,8 +1,8 @@
 
 
 def lambda_handler(event, context):
-    message = "created with sucess"
-    return {
-        "statuscode": 200,
-        "body": message
-    }
+    return _sum(event['a'], event['b'])
+
+
+def _sum(a,b):
+    return a+b
